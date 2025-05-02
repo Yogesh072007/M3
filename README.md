@@ -14,9 +14,30 @@ To write a program to prepare EMI calculator using function without return type 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <math.h>
+
+void emiCalc(float p, float r, int t) {
+    float R = r / (12 * 100);
+    float emi = (p * R * pow(1 + R, t)) / (pow(1 + R, t) - 1);
+    printf("EMI = %.2f\n", emi);
+}
+
+int main() {
+    float principal, rate;
+    int months;
+    scanf("%f %f %d", &principal, &rate, &months);
+    emiCalc(principal, rate, months);
+    return 0;
+}
+```
 
 
 ## OUTPUT
+```
+EMI = 8791.59
+```
 
 
 
@@ -43,8 +64,26 @@ To write a C program to generate the Fibonacci series for the value 6.
 7.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int n = 6, a = 0, b = 1, c;
+    printf("%d %d ", a, b);
+    for (int i = 2; i < n; i++) {
+        c = a + b;
+        printf("%d ", c);
+        a = b;
+        b = c;
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
+```
+0 1 1 2 3 5
+```
 
 
 
@@ -71,8 +110,25 @@ To write a C program to read n elements as input and print the last element of t
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Last element = %d\n", arr[n - 1]);
+    return 0;
+}
+```
 
 ## OUTPUT
+```
+Last element = 5
+```
 
 
 
@@ -101,9 +157,29 @@ To write a C Program to count total number of positive elements in an array.
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        if (arr[i] > 0) {
+            count++;
+        }
+    }
+    printf("Total positive elements = %d\n", count);
+    return 0;
+}
+```
 
 
 ## OUTPUT
+```
+Total positive elements = 3
+```
 
 
 
@@ -137,8 +213,30 @@ To write a C program to replace all even elements with 'E' in one dimensional ar
  Print the updated array after replacements.
 
 ## Program:
+```
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0)
+            printf("E ");
+        else
+            printf("%d ", arr[i]);
+    }
+    return 0;
+}
+```
 
 ## Output:
+```
+1 E 3 E 5
+```
  
 
 
